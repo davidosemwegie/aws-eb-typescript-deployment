@@ -1,0 +1,6 @@
+{
+  "name": "aws-eb-typescript-deployment",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
