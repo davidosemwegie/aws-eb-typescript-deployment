@@ -33,7 +33,6 @@
 version: 2
 jobs:
   deploy:
-    working_directory: ~/app
     docker:
       - image: circleci/node:12
     steps:
@@ -50,7 +49,7 @@ jobs:
 
       - run:
           name: Deploying
-          command: eb deploy $CIRCLE_BRANCH-my-application
+          command: eb deploy aws-eb-typescript-deployment
 
 workflows:
   version: 2
