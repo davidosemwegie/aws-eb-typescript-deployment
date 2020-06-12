@@ -5,7 +5,7 @@ const app = express()
 const port = process.env.PORT || 3050
 
 app.get("/", (req, res) => {
-  res.send("Tracflo API Test 7")
+  res.send("Tracflo API Test v2")
 })
 
 app.get("/hello", (req, res) => {
