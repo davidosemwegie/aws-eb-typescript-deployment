@@ -3,21 +3,21 @@ orbs:
   node: circleci/node@1.1.6
   awsebcli: sbc-orbs/awsebcli@0.0.3
 jobs:
-    build-and-test:
-        executor:
-            name: node/default    
-        steps:
-         - checkout
-        - node/with-cache:
-            steps:
-                - run: npm install
-    ebs-deploy:
-        executor:
-            name: awsebcli/default
-        steps:
-            - awsebcli/install
-            - awsebcli/configure
-            - run: eb deploy
+  build-and-test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+  ebs-deploy:
+    executor:
+      name: awsebcli/default
+    steps:
+      - awsebcli/install
+      - awsebcli/configure
+      - run: eb deploy
 
 workflows:
   deploy:
