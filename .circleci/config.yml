@@ -18,6 +18,7 @@ jobs:
     steps:
       - awsebcli/install
       - awsebcli/configure
+      - run: eb init
       - run: eb deploy
 
 workflows:
