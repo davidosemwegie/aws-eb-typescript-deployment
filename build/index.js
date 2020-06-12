@@ -10,8 +10,8 @@ const port = process.env.PORT || 8080;
 app.get("/", (req, res) => {
     res.send("Tracflo API Test v2");
 });
-app.get("/hello", (req, res) => {
-    res.send("Hello world");
+app.get("/hope", (req, res) => {
+    res.send("I hope this works");
 });
 app.get("/value", (req, res) => {
     res.send(`variable: ${config_1.value}`);
