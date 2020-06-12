@@ -37,7 +37,6 @@ jobs:
       - image: circleci/node:12
     steps:
       - checkout
-
       - run:
           name: Installing deployment dependencies
           working_directory: /
@@ -46,7 +45,6 @@ jobs:
             sudo apt-get install python-pip python-dev build-essential
             sudo pip install --upgrade setuptools
             sudo pip install awsebcli --upgrade
-
       - run:
           name: Deploying
           command: eb deploy aws-eb-typescript-deployment
