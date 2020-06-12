@@ -13,8 +13,8 @@ app.get("/", (req, res) => {
 app.get("/hope", (req, res) => {
     res.send("I hope this works");
 });
-app.get("/v2", (req, res) => {
-    res.send("This is version 2");
+app.get("/env", (req, res) => {
+    res.send(process.env.VAR);
 });
 app.get("/value", (req, res) => {
     res.send(`variable: ${config_1.value}`);
