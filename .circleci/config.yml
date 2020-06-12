@@ -19,7 +19,7 @@ jobs:
       - awsebcli/install
       - awsebcli/configure
       - run: eb init
-      - run: 3
+      - run: "3"
       - run: eb deploy
 
 workflows:
