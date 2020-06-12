@@ -13,6 +13,9 @@ app.get("/", (req, res) => {
 app.get("/hope", (req, res) => {
     res.send("I hope this works");
 });
+app.get("/david", (req, res) => {
+    res.send("This is David's app");
+});
 app.get("/value", (req, res) => {
     res.send(`variable: ${config_1.value}`);
 });
