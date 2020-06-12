@@ -1,35 +1,3 @@
-# version: 2.1
-
-# orbs:
-#   node: circleci/node@1.1.6
-#   awsebcli: sbc-orbs/awsebcli@0.0.3
-# jobs:
-#   build-and-test:
-#     executor:
-#       name: node/default
-#     steps:
-#       - checkout
-#       - node/with-cache:
-#           steps:
-#             - run: npm install
-#   ebs-deploy:
-#     executor:
-#       name: awsebcli/default
-#     steps:
-#       - awsebcli/install
-#       - awsebcli/configure:
-#           aws-access-key-id: AWS_ACCESS_KEY_ID
-#           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-#           aws-region: AWS_DEFAULT_REGION
-#       - run: eb init
-#       - run: eb deploy aws-eb-typescript-deployment
-
-# workflows:
-#   deploy:
-#     jobs:
-#       - build-and-test
-#       - ebs-deploy
-
 version: 2.1
 jobs:
   deploy:
