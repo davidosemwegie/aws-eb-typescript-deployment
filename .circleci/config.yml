@@ -1,31 +1,60 @@
-version: 2.1
+# version: 2.1
 
+# orbs:
+#   node: circleci/node@1.1.6
+#   awsebcli: sbc-orbs/awsebcli@0.0.3
+# jobs:
+#   build-and-test:
+#     executor:
+#       name: node/default
+#     steps:
+#       - checkout
+#       - node/with-cache:
+#           steps:
+#             - run: npm install
+#   ebs-deploy:
+#     executor:
+#       name: awsebcli/default
+#     steps:
+#       - awsebcli/install
+#       - awsebcli/configure:
+#           aws-access-key-id: AWS_ACCESS_KEY_ID
+#           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+#           aws-region: AWS_DEFAULT_REGION
+#       - run: eb init
+#       - run: eb deploy aws-eb-typescript-deployment
+
+# workflows:
+#   deploy:
+#     jobs:
+#       - build-and-test
+#       - ebs-deploy
+
+version: 2
 orbs:
   node: circleci/node@1.1.6
-  awsebcli: sbc-orbs/awsebcli@0.0.3
 jobs:
-  build-and-test:
-    executor:
-      name: node/default
+  deploy:
+      executor:
+        name: node/default
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-  ebs-deploy:
-    executor:
-      name: awsebcli/default
-    steps:
-      - awsebcli/install
-      - awsebcli/configure:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: AWS_DEFAULT_REGION
-      - run: eb init
-      - run: eb deploy aws-eb-typescript-deployment
+
+      - run:
+          name: Installing deployment dependencies
+          working_directory: /
+          command: |
+            sudo apt-get -y -qq update
+            sudo apt-get install python-pip python-dev build-essential
+            sudo pip install --upgrade setuptools
+            sudo pip install awsebcli --upgrade
+
+      - run:
+          name: Deploying
+          command: eb deploy aws-eb-typescript-deployment
 
 workflows:
-  deploy:
+  version: 2
+  build:
     jobs:
-      - build-and-test
-      - ebs-deploy
+      - deploy
