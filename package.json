@@ -20,11 +20,17 @@
   },
   "homepage": "https://github.com/davidosemwegie/aws-eb-typescript-deployment#readme",
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
     "@types/express": "^4.0.37",
     "@types/node": "^8.0.28",
     "typescript": "^2.5.2"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.15.4",
     "nodemon": "^2.0.4",
     "ts-node": "^8.6.2",
