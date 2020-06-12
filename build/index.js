@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app = express_1.default();
 const port = process.env.PORT || 3050;
 app.get("/", (req, res) => {
-    res.send("Tracflo API Test 7");
+    res.send("Tracflo API Test v2");
 });
 app.get("/hello", (req, res) => {
     res.send("Hello world");
