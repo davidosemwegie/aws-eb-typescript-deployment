@@ -11,8 +11,8 @@ app.get("/hope", (req, res) => {
   res.send("I hope this works")
 })
 
-app.get("/v1", (req, res) => {
-  res.send("This is version 1")
+app.get("/v2", (req, res) => {
+  res.send("This is version 2")
 })
 
 app.get("/value", (req, res) => {

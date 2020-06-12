@@ -13,6 +13,7 @@ jobs:
             - add_ssh_keys:
                 fingerprints:
                   - "5b:9c:18:98:e5:ac:bc:61:29:a5:2f:8a:45:41:24:f9"
+            - run: npm run clean
             - run: npm run build
             - run: npm run dist
             - run: git config user.email "dosemwegie@gmail.com"
