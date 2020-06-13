@@ -14,6 +14,10 @@ app.get("/env", (req, res) => {
   res.send(process.env.VAR)
 })
 
+app.get("/v1", (req, res) => {
+  res.send("In this version I included by build and dist folder to gitub")
+})
+
 app.get("/value", (req, res) => {
   res.send(`variable: ${value}`)
 })
