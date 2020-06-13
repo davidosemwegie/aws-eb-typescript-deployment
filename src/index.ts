@@ -6,8 +6,8 @@ const port = process.env.PORT || 8080
 app.get("/", (req, res) => {
   res.send("Tracflo API Test v2")
 })
-app.get("/ci", (req, res) => {
-  res.send("I was able to integrate this with circle CI :)")
+app.get("/final", (req, res) => {
+  res.send("This is the final test")
 })
 
 app.get("/env", (req, res) => {
