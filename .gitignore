@@ -6,10 +6,8 @@
 
 .env
 
-/.env
+build
 
-/build
+node_modules
 
-/dist
-
-/node_modules
+dist
